@@ -28,7 +28,6 @@ export const settingsQuery = groq`
       "slug": slug.current,
       title
     },
-    ogImage,
     github,
     twitter,
     name,

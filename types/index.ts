@@ -26,6 +26,5 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   github?: Url
   twitter?: Url
-  ogImage?: Image
   name: string
 }
