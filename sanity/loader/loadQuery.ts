@@ -57,7 +57,7 @@ export const loadQuery = ((query, params = {}, options = {}) => {
  */
 
 export function loadSettings() {
-  return loadQuery<SettingsPayload>(
+  return loadQuery<SettingsPayload | null>(
     settingsQuery,
     {},
     { next: { tags: ['settings', 'home', 'page'] } },

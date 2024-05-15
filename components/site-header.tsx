@@ -23,7 +23,7 @@ export async function SiteHeader() {
             <CommandMenu data={initial.data} />
           </div>
           <nav className="flex items-center">
-            {initial.data.github && (
+            {initial?.data?.github && (
               <Link href={initial.data.github} target="_blank" rel="noreferrer">
                 <div
                   className={cn(
@@ -38,7 +38,7 @@ export async function SiteHeader() {
                 </div>
               </Link>
             )}
-            {initial.data.twitter && (
+            {initial?.data?.twitter && (
               <Link
                 href={initial.data.twitter}
                 target="_blank"

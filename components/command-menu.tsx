@@ -22,7 +22,7 @@ import { SettingsPayload } from '@/types'
 export function CommandMenu({
   data,
   ...props
-}: DialogProps & { data: SettingsPayload }) {
+}: DialogProps & { data: SettingsPayload | null }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const { setTheme } = useTheme()
