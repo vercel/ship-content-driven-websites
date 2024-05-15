@@ -12,11 +12,12 @@ import {
 
 type CardProps = React.ComponentProps<typeof Card>
 
-interface GridHighlightCardProps extends CardProps {
+export interface GridHighlightCardProps extends CardProps {
   title: string
   description: string
   bullets: { text: string; _key: string }[]
   cta?: { label: string; href: string }
+  _key: string
 }
 
 export function GridHighlightCard({

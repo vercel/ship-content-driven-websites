@@ -1,9 +1,9 @@
-export interface Header {
+export interface HeaderProps {
   title: string
   description: string
 }
 
-export const Header = ({ title, description }: Header) => {
+export const Header = ({ title, description }: HeaderProps) => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">

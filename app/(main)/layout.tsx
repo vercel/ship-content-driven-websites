@@ -4,7 +4,6 @@ import { VercelToolbar } from '@vercel/toolbar/next'
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { toPlainText } from 'next-sanity'
 import { ThemeProvider } from 'next-themes'
 import { Suspense } from 'react'
 

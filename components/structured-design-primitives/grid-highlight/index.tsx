@@ -1,7 +1,7 @@
-import { GridHighlightCard } from './card'
+import { GridHighlightCard, GridHighlightCardProps } from './card'
 
 interface GridHighlightProps {
-  cards: any[]
+  cards: GridHighlightCardProps[]
 }
 
 export function GridHighlight({ cards }: GridHighlightProps) {

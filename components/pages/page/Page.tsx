@@ -1,4 +1,4 @@
-import { CustomPortableText } from '@/components/CustomPortableText'
+import { CustomPortableText } from '@/components/custom-portable-text'
 import type { PagePayload } from '@/types'
 
 export interface PageProps {

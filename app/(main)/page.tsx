@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 
 import HomePage from '@/components/home-page/HomePage'
-import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
+import { loadHomePage } from '@/sanity/loader/loadQuery'
 const HomePagePreview = dynamic(
   () => import('@/components/home-page/HomePagePreview'),
 )

@@ -2,12 +2,12 @@
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
-import { Header } from './header'
+import { Header, HeaderProps } from './header'
 import { Product, ProductCard } from './product-card'
 
 interface HeroParallaxProps {
   products: Product[]
-  header: Header
+  header: HeaderProps
 }
 
 export const Hero = ({ products, header }: HeroParallaxProps) => {

@@ -8,8 +8,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { PagePayload } from '@/types'
 
-export function PreviewDataSheet({ data }: { data: any }) {
+export function PreviewDataSheet({ data }: { data: PagePayload | null }) {
   return (
     <div className="hidden lg:block">
       <Sheet>
