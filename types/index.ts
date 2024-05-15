@@ -24,7 +24,7 @@ export interface PagePayload {
 export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]
-  github?: Url
-  twitter?: Url
+  github?: string
+  twitter?: string
   name: string
 }
