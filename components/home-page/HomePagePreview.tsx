@@ -20,8 +20,6 @@ export default function HomePagePreview(props: Props) {
     initial,
   })
 
-  console.log(data)
-
   return (
     <>
       <HomePage data={data!} />

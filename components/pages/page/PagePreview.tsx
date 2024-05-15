@@ -20,8 +20,6 @@ export default function PagePreview(props: Props) {
     initial,
   })
 
-  console.log(data)
-
   return (
     <>
       <Page data={data!} />
