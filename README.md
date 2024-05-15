@@ -1,15 +1,14 @@
 # Build a stunning, content-driven website<!-- omit in toc -->
-
-This starter is a statically generated personal website that uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content. It comes with a native Sanity Studio that offers features like real-time collaboration and visual editing with live updates using [Presentation][presentation].
-
-The Studio connects to Sanity Content Lake, which gives you hosted content APIs with a flexible query language, on-demand image transformations, powerful patching, and more. You can use this starter to kick-start a personal website or learn these technologies.
-
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
+
+This template uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content. It comes with a native Sanity Studio that offers features like real-time collaboration and visual editing with live updates using [Presentation][presentation].
+
+The Studio connects to Sanity Content Lake, which gives you hosted content APIs with a flexible query language, on-demand image transformations, powerful patching, and more. You can use this starter to kick-start a content-driven website or learn more about these technologies.
 
 ## Features
 
-- A performant, content-driven website with editable projects
-- A native and customizable authoring environment, accessible on `yourpersonalwebsite.com/studio`
+- A performant, content-driven website with editable pages
+- A native and customizable authoring environment
 - Real-time and collaborative content editing with fine-grained revision history
 - Side-by-side instant content preview that works across your whole site
 - Support for block content and the most advanced custom fields capability in the industry
@@ -28,10 +27,6 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
   - [Step 2. Set up the project locally](#step-2-set-up-the-project-locally)
   - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
   - [Step 4. Deploy to production](#step-4-deploy-to-production)
-- [Questions and Answers](#questions-and-answers)
-  - [It doesn't work! Where can I get help?](#it-doesnt-work-where-can-i-get-help)
-  - [How can I remove the "Next steps" block from my personal site?](#how-can-i-remove-the-next-steps-block-from-my-personal-website)
-- [Next steps](#next-steps)
 
 ## Project Overview
 
@@ -78,7 +73,7 @@ npm install && npm run dev
 
 When you run this development server, the changes you make in your frontend and studio configuration will be applied live using hot reloading.
 
-Your personal website should be up and running on [http://localhost:3000][localhost-3000]! You can create and edit content on [http://localhost:3000/studio][localhost-3000-studio].
+Your content-driven website should be up and running on [http://localhost:3000][localhost-3000]! You can create and edit content on [http://localhost:3000/studio][localhost-3000-studio].
 
 ### Step 4. Deploy to production
 
