@@ -60,7 +60,14 @@ export function MobileNav({ data }: { data: SettingsPayload | null }) {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.logo className="mr-2 h-4 w-4" />
+          {data?.name ? (
+            <span className="hidden font-bold sm:inline-block">
+              {data?.name}
+            </span>
+          ) : (
+            <Icons.logo className="w-[124px]" />
+          )}
+
           <span className="font-bold">{data?.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
