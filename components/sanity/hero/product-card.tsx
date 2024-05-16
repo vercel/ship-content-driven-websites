@@ -1,4 +1,3 @@
-import { SanityAsset } from '@sanity/image-url/lib/types/types'
 import { motion, MotionValue } from 'framer-motion'
 import Link from 'next/link'
 

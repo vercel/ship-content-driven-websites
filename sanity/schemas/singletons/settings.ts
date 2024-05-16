@@ -31,10 +31,10 @@ export default defineType({
     }),
     defineField({
       name: 'name',
-      description: 'The name of your site that is shown in the navigation.',
+      description:
+        'The name of your site that is shown in the navigation. If not defined it will show the default logo',
       title: 'Site Name',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'github',

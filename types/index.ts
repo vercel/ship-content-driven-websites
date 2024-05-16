@@ -24,5 +24,5 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   github?: string
   twitter?: string
-  name: string
+  name?: string
 }

@@ -4,9 +4,9 @@ import {
   type PortableTextComponents,
 } from 'next-sanity'
 
-import { GridHighlight } from '@/components/structured-design-primitives/grid-highlight'
-import { Hero } from '@/components/structured-design-primitives/hero'
-import { Spotlight } from '@/components/structured-design-primitives/spotlight'
+import { GridHighlight } from '@/components/sanity/grid-highlight'
+import { Hero } from '@/components/sanity/hero'
+import { Spotlight } from '@/components/sanity/spotlight'
 
 export function CustomPortableText({
   value,

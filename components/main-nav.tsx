@@ -8,8 +8,11 @@ export function MainNav({ data }: { data: SettingsPayload | null }) {
   return (
     <div className="mr-4 hidden md:flex">
       <Link prefetch href="/" className="mr-6 flex items-center space-x-2">
-        <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">{data?.name}</span>
+        {data?.name ? (
+          <span className="hidden font-bold sm:inline-block">{data?.name}</span>
+        ) : (
+          <Icons.logo className="w-[124px]" />
+        )}
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         {data?.menuItems?.map((item) => (
