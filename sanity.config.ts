@@ -22,6 +22,7 @@ import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
 import ctaLink from './sanity/schemas/objects/ctaLink'
+import customComponents from './sanity/schemas/objects/custom-components'
 import gridHighlight from './sanity/schemas/objects/grid-highlight'
 import hero from './sanity/schemas/objects/hero'
 import metadataPage from './sanity/schemas/objects/metadata'
@@ -51,6 +52,7 @@ export default defineConfig({
       spotlightHeader,
       ctaLink,
       gridHighlight,
+      customComponents,
     ],
   },
   plugins: [

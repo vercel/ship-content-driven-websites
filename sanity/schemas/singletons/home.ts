@@ -104,26 +104,10 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      type: 'array',
+      type: 'customComponents',
       name: 'body',
       title: 'Body',
-      description:
-        "This is where you can write the page's content. Including custom blocks like timelines for more a more visual display of information.",
-      of: [
-        // Custom blocks
-        defineArrayMember({
-          name: 'hero',
-          type: 'hero',
-        }),
-        defineArrayMember({
-          name: 'spotlightHeader',
-          type: 'spotlightHeader',
-        }),
-        defineArrayMember({
-          name: 'gridHighlight',
-          type: 'gridHighlight',
-        }),
-      ],
+      description: "This is where you can create the page's content.",
     }),
   ],
   preview: {
