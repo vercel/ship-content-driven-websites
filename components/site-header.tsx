@@ -24,7 +24,12 @@ export async function SiteHeader() {
           </div>
           <nav className="flex items-center">
             {initial?.data?.github && (
-              <Link href={initial.data.github} target="_blank" rel="noreferrer">
+              <Link
+                prefetch
+                href={initial.data.github}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div
                   className={cn(
                     buttonVariants({

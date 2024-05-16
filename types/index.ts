@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import { Url } from 'next/dist/shared/lib/router/router'
 import type { PortableTextBlock } from 'next-sanity'
-import type { Image } from 'sanity'
 
 export interface MenuItem {
   _type: string
