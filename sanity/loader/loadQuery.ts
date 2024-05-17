@@ -3,6 +3,11 @@ import 'server-only'
 import * as queryStore from '@sanity/react-loader'
 import { draftMode } from 'next/headers'
 
+import {
+  HomePageQueryResult,
+  PagesBySlugQueryResult,
+  SettingsQueryResult,
+} from '@/sanity.types'
 import { client } from '@/sanity/lib/client'
 import {
   homePageQuery,
@@ -10,7 +15,6 @@ import {
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
-import { HomePagePayload, PagePayload, SettingsPayload } from '@/types'
 
 const serverClient = client.withConfig({
   token,
@@ -57,7 +61,7 @@ export const loadQuery = ((query, params = {}, options = {}) => {
  */
 
 export function loadSettings() {
-  return loadQuery<SettingsPayload | null>(
+  return loadQuery<SettingsQueryResult>(
     settingsQuery,
     {},
     { next: { tags: ['settings', 'home', 'page'] } },
@@ -65,7 +69,7 @@ export function loadSettings() {
 }
 
 export function loadHomePage() {
-  return loadQuery<HomePagePayload | null>(
+  return loadQuery<HomePageQueryResult>(
     homePageQuery,
     {},
     { next: { tags: ['home'] } },
@@ -73,7 +77,7 @@ export function loadHomePage() {
 }
 
 export function loadPage(slug: string) {
-  return loadQuery<PagePayload | null>(
+  return loadQuery<PagesBySlugQueryResult>(
     pagesBySlugQuery,
     { slug },
     { next: { tags: [`page:${slug}`] } },

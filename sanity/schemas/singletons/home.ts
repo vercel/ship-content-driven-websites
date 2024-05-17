@@ -41,10 +41,30 @@ export default defineType({
           description: 'These are the keywords for your website.',
         }),
         defineField({
-          name: 'author',
-          title: 'Author',
-          type: 'string',
-          description: 'This is the author of your website.',
+          name: 'authors',
+          title: 'Author(s)',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'name',
+                  title: 'Name',
+                  type: 'string',
+                  description: 'This is the name of an author of your website.',
+                }),
+                defineField({
+                  name: 'url',
+                  title: 'URL',
+                  type: 'string',
+                  description: 'This is the URL of an author of your website.',
+                }),
+              ],
+            },
+          ],
+
+          description: 'These are the authors of your website.',
         }),
         defineField({
           name: 'publisher',

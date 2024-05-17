@@ -8,6 +8,7 @@
     "lint": "next lint .",
     "lint:fix": "npm run format && npm run lint -- --fix",
     "start": "next start",
+    "typegen": "npx sanity schema extract && npx sanity typegen generate",
     "type-check": "tsc --noEmit"
   },
   "prettier": {

@@ -2,9 +2,9 @@ import Link from 'next/link'
 import * as React from 'react'
 
 import { Icons } from '@/components/icons'
-import { SettingsPayload } from '@/types'
+import { SettingsQueryResult } from '@/sanity.types'
 
-export function MainNav({ data }: { data: SettingsPayload | null }) {
+export function MainNav({ data }: { data: SettingsQueryResult }) {
   return (
     <div className="mr-4 hidden md:flex">
       <Link prefetch href="/" className="mr-6 flex items-center space-x-2">

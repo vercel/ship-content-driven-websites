@@ -5,7 +5,7 @@ import {
 } from '@sanity/react-loader'
 import * as queryStore from '@sanity/react-loader'
 
-import { SettingsPayload } from '@/types'
+import { SettingsQueryResult } from '@/sanity.types'
 
 import { settingsQuery } from '../lib/queries'
 
@@ -37,6 +37,8 @@ export const useQuery = <
 /**
  * Loaders that are used in more than one place are declared here, otherwise they're colocated with the component
  */
-export function useSettings(initial: QueryResponseInitial<SettingsPayload>) {
-  return useQuery<SettingsPayload>(settingsQuery, {}, { initial })
+export function useSettings(
+  initial: QueryResponseInitial<SettingsQueryResult>,
+) {
+  return useQuery<SettingsQueryResult>(settingsQuery, {}, { initial })
 }

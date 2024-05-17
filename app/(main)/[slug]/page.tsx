@@ -22,8 +22,8 @@ export async function generateMetadata(
     title: page?.title,
     description: page?.description ?? (await parent).description,
     openGraph: {
-      title: page?.title,
-      description: page?.description,
+      title: page?.title ?? '',
+      description: page?.description ?? '',
       url: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`),
       images: [
         {

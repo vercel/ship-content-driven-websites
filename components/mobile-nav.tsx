@@ -6,13 +6,13 @@ import * as React from 'react'
 
 import { Icons } from '@/components/icons'
 import { cn } from '@/lib/utils'
-import { SettingsPayload } from '@/types'
+import { SettingsQueryResult } from '@/sanity.types'
 
 import { Button } from './ui/button'
 import { ScrollArea } from './ui/scroll-area'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 
-export function MobileNav({ data }: { data: SettingsPayload | null }) {
+export function MobileNav({ data }: { data: SettingsQueryResult }) {
   const [open, setOpen] = React.useState(false)
 
   return (

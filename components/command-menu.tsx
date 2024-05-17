@@ -17,12 +17,12 @@ import {
   CommandSeparator,
 } from '@/components/ui/command'
 import { cn } from '@/lib/utils'
-import { SettingsPayload } from '@/types'
+import { SettingsQueryResult } from '@/sanity.types'
 
 export function CommandMenu({
   data,
   ...props
-}: DialogProps & { data: SettingsPayload | null }) {
+}: DialogProps & { data: SettingsQueryResult }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const { setTheme } = useTheme()
@@ -77,7 +77,7 @@ export function CommandMenu({
             {data?.menuItems?.map((menuItem) => (
               <CommandItem
                 key={menuItem.slug}
-                value={menuItem.title}
+                value={menuItem?.title ?? undefined}
                 onSelect={() => {
                   runCommand(() => router.push(menuItem.slug as string))
                 }}

@@ -1,9 +1,9 @@
-import type { HomePagePayload } from '@/types'
+import { HomePageQueryResult } from '@/sanity.types'
 
 import Page from '../pages/page/Page'
 
 export interface HomePageProps {
-  data: HomePagePayload | null
+  data: HomePageQueryResult
 }
 
 export function HomePage(props: HomePageProps) {

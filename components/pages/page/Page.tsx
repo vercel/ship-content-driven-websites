@@ -1,8 +1,8 @@
 import { CustomPortableText } from '@/components/custom-portable-text'
-import type { PagePayload } from '@/types'
+import { HomePageQueryResult, PagesBySlugQueryResult } from '@/sanity.types'
 
 export interface PageProps {
-  data: PagePayload | null
+  data: PagesBySlugQueryResult | HomePageQueryResult
 }
 
 export function Page({ data }: PageProps) {

@@ -8,9 +8,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { PagePayload } from '@/types'
+import { HomePageQueryResult, PagesBySlugQueryResult } from '@/sanity.types'
 
-export function PreviewDataSheet({ data }: { data: PagePayload | null }) {
+export function PreviewDataSheet({
+  data,
+}: {
+  data: PagesBySlugQueryResult | HomePageQueryResult
+}) {
   return (
     <div className="hidden lg:block">
       <Sheet>
