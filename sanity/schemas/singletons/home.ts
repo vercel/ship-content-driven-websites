@@ -78,12 +78,6 @@ export default defineType({
           type: 'object',
           fields: [
             defineField({
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              description: 'This is the open graph image for your website.',
-            }),
-            defineField({
               name: 'title',
               title: 'Title',
               type: 'string',
