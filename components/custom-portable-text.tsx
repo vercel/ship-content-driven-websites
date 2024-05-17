@@ -25,5 +25,7 @@ export function CustomPortableText({
     },
   }
 
+  if (!value) return null
+
   return <PortableText components={components} value={value} />
 }
