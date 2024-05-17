@@ -29,8 +29,7 @@ import metadataPage from './sanity/schemas/objects/metadata'
 import spotlightHeader from './sanity/schemas/objects/spotlight-header'
 
 const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Ship Content Driven Websites'
 
 export default defineConfig({
   basePath: studioUrl,
