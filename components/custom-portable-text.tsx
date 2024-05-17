@@ -1,18 +1,15 @@
-import {
-  PortableText,
-  type PortableTextBlock,
-  type PortableTextComponents,
-} from 'next-sanity'
+import { PortableText, type PortableTextComponents } from 'next-sanity'
 
 import { GridHighlight } from '@/components/sanity/grid-highlight'
 import { Hero } from '@/components/sanity/hero'
 import { Spotlight } from '@/components/sanity/spotlight'
+import { CustomComponents } from '@/sanity.types'
 
 export function CustomPortableText({
   value,
 }: {
   paragraphClasses?: string
-  value: PortableTextBlock[]
+  value: CustomComponents
 }) {
   const components: PortableTextComponents = {
     types: {

@@ -2,6 +2,7 @@
   "name": "ship-content-driven-websites",
   "version": "1.0.0",
   "scripts": {
+    "prebuild": "npm run typegen",
     "build": "next build",
     "dev": "next",
     "format": "npx prettier --write . --ignore-path .gitignore",

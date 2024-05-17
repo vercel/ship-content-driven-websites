@@ -68,7 +68,72 @@ export type Geopoint = {
   alt?: number
 }
 
-export type CustomComponents = null
+export type CustomComponents = Array<
+  | ({
+      _key: string
+    } & Hero)
+  | ({
+      _key: string
+    } & SpotlightHeader)
+  | ({
+      _key: string
+    } & GridHighlight)
+>
+
+export type GridHighlight = {
+  _type: 'gridHighlight'
+  cards?: Array<{
+    title?: string
+    description?: string
+    bullets?: Array<{
+      text?: string
+      _key: string
+    }>
+    cta?: {
+      label?: string
+      link?: string
+    }
+    _key: string
+  }>
+}
+
+export type CtaLink = {
+  _type: 'ctaLink'
+  label?: string
+  url?: string
+}
+
+export type SpotlightHeader = {
+  _type: 'spotlightHeader'
+  spotlight?: string
+  title?: string
+  description?: string
+  fill?: string
+}
+
+export type Hero = {
+  _type: 'hero'
+  header?: {
+    title?: string
+    description?: string
+  }
+  products?: Array<{
+    title?: string
+    link?: string
+    thumbnail?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    _key: string
+  }>
+}
 
 export type MetadataPage = {
   _type: 'metadata-page'
@@ -127,63 +192,6 @@ export type MetadataPage = {
     crop?: SanityImageCrop
     _type: 'image'
   }
-}
-
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
-}
-
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
-
-export type SanityImageAsset = {
-  _id: string
-  _type: 'sanity.imageAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  metadata?: SanityImageMetadata
-  source?: SanityAssetSourceData
-}
-
-export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData'
-  name?: string
-  id?: string
-  url?: string
-}
-
-export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata'
-  location?: Geopoint
-  dimensions?: SanityImageDimensions
-  palette?: SanityImagePalette
-  lqip?: string
-  blurHash?: string
-  hasAlpha?: boolean
-  isOpaque?: boolean
 }
 
 export type Page = {
@@ -255,6 +263,63 @@ export type Home = {
   }
   slug?: Slug
   body?: CustomComponents
+}
+
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop'
+  top?: number
+  bottom?: number
+  left?: number
+  right?: number
+}
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot'
+  x?: number
+  y?: number
+  height?: number
+  width?: number
+}
+
+export type SanityImageAsset = {
+  _id: string
+  _type: 'sanity.imageAsset'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  originalFilename?: string
+  label?: string
+  title?: string
+  description?: string
+  altText?: string
+  sha1hash?: string
+  extension?: string
+  mimeType?: string
+  size?: number
+  assetId?: string
+  uploadId?: string
+  path?: string
+  url?: string
+  metadata?: SanityImageMetadata
+  source?: SanityAssetSourceData
+}
+
+export type SanityAssetSourceData = {
+  _type: 'sanity.assetSourceData'
+  name?: string
+  id?: string
+  url?: string
+}
+
+export type SanityImageMetadata = {
+  _type: 'sanity.imageMetadata'
+  location?: Geopoint
+  dimensions?: SanityImageDimensions
+  palette?: SanityImagePalette
+  lqip?: string
+  blurHash?: string
+  hasAlpha?: boolean
+  isOpaque?: boolean
 }
 
 export type Slug = {
