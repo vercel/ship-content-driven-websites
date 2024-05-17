@@ -1,4 +1,5 @@
 # Build a stunning, content-driven website<!-- omit in toc -->
+
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
 This template uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content. It comes with a native Sanity Studio that offers features like real-time collaboration and visual editing with live updates using [Presentation][presentation].
@@ -92,6 +93,27 @@ Alternatively, you can deploy without a `git` hosting provider using the Vercel 
 npx vercel --prod
 ```
 
+## Adding Components
+
+#### Step 1. Use [v0.dev][v0.dev] to help design a component
+
+#### Step 2. Create a schema for your new component in the `sanity/schemas/objects` folder
+
+#### Step 3. Add the schema to the `sanity/schemas/objects/custom-components.ts` file
+
+#### Step 4. Create a new component in the `/components/sanity` folder
+
+#### Step 5. Automatically create types for your new schema
+
+```bash
+npm run typegen
+```
+
+#### Step 6. Update the `<CustomPortableText />` component in `components/custom-portable-text.tsx` to include your new component
+
+#### Step 7. Go to the `/studio` route in your project to create and publish your content
+
+[v0.dev]: https://v0.dev
 [vercel-deploy]: https://vercel.com/new/matthew-lewis-projects-c7bdd331/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fship-content-driven-websites%2Ftree%2Fstart&project-name=my-content-driven-website&repository-name=my-content-driven-website&demo-title=Content+Driven+Website&demo-description=A+content-driven+website+with+built-in+content+editing+and+instant+previews.+Uses+App+Router.&demo-url=https%3A%2F%2Fship-content-driven-websites.vercel.app&demo-image=https%3A%2F%2Fship-content-driven-websites.vercel.app%2Fapi%2Fog%3Ftitle%3DShip+Content+Driven+Websites&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx&external-id=nextjs%3Btemplate%3Dship-content-driven-websites&env=SANITY_REVALIDATE_SECRET&envDescription=A%20random%20string%20value%20used%20to%20validate%20revalidation%20requests%20from%20the%20Sanity%20Webhook.
 [integration]: https://www.sanity.io/docs/vercel-integration?utm_source=github.com&utm_medium=referral&utm_campaign=nextjs-v3vercelstarter
 [`.env.local.example`]: .env.local.example
