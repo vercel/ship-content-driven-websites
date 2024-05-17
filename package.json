@@ -49,6 +49,7 @@
     "sanity": "^3.42.1",
     "sanity-plugin-asset-source-unsplash": "3.0.1",
     "server-only": "0.0.1",
+    "sharp": "^0.33.4",
     "styled-components": "6.1.11",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
