@@ -1,6 +1,6 @@
 import { defineType } from 'sanity'
 
-export default defineType({
+export const customComponents = defineType({
   name: 'customComponents',
   title: 'Custom Components',
   type: 'array',

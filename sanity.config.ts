@@ -16,19 +16,15 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
 import { resolveHref } from '@/sanity/lib/utils'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
-import page from '@/sanity/schemaTypes/documents/page'
-import ctaLink from '@/sanity/schemaTypes/objects/ctaLink'
-import customComponents from '@/sanity/schemaTypes/objects/custom-components'
-import duration from '@/sanity/schemaTypes/objects/duration'
-import gridHighlight from '@/sanity/schemaTypes/objects/grid-highlight'
-import hero from '@/sanity/schemaTypes/objects/hero'
-import metadataPage from '@/sanity/schemaTypes/objects/metadata'
-import spotlightHeader from '@/sanity/schemaTypes/objects/spotlight-header'
-import home from '@/sanity/schemaTypes/singletons/home'
-import settings from '@/sanity/schemaTypes/singletons/settings'
+
+import { schemaTypes } from './sanity/schemaTypes'
+import { home } from './sanity/schemaTypes/singletons/home'
+import { settings } from './sanity/schemaTypes/singletons/settings'
+
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Ship Content Driven Websites'
+
 
 export default defineConfig({
   basePath: studioUrl,
@@ -37,21 +33,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [
-      // Singletons
-      home,
-      settings,
-      // Documents
-      duration,
-      page,
-      // Objects
-      metadataPage,
-      hero,
-      spotlightHeader,
-      ctaLink,
-      gridHighlight,
-      customComponents,
-    ],
+    types: schemaTypes,
   },
   plugins: [
     structureTool({
