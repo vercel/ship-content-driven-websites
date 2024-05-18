@@ -40,7 +40,7 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 | `/app/studio/[[...tool]]/Studio.tsx`                       | Where Sanity Studio is mounted                          |
 | `/app/api/revalidate/route.ts`                             | Serverless route for triggering ISR                     |
 | `/app/api/draft/route.ts`                                  | Serverless route for triggering Draft mode              |
-| `/sanity/schemas`                                          | Where Sanity Studio gets its content types from         |
+| `/sanity/schemaTypes`                                          | Where Sanity Studio gets its content types from         |
 | `/sanity/plugins`                                          | Where the advanced Sanity Studio customization is setup |
 | `/sanity/loader/loadQuery.ts`,`/sanity/loader/useQuery.ts` | Configuration for the Sanity Content Lake client        |
 | `/components/custom-portable-text.tsx`                     | Component for rendering your custom React components    |
@@ -97,9 +97,9 @@ npx vercel --prod
 
 #### Step 1. Use [v0.dev][v0.dev] to help design a component
 
-#### Step 2. Create a schema for your new component in the `sanity/schemas/objects` folder
+#### Step 2. Create a schema for your new component in the `sanity/schemaTypes/objects` folder
 
-#### Step 3. Add the schema to the `sanity/schemas/objects/custom-components.ts` file
+#### Step 3. Add the schema to the `sanity/schemaTypes/objects/custom-components.ts` file
 
 #### Step 4. Create a new component in the `/components/sanity` folder
 
