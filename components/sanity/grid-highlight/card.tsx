@@ -9,31 +9,26 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { GridHighlight as GridHighlightProps } from '@/sanity.types'
 
-type CardProps = React.ComponentProps<typeof Card>
-
-export interface GridHighlightCardProps extends CardProps {
-  title: string
-  description: string
-  bullets: { text: string; _key: string }[]
-  cta?: { label: string; href: string }
-  _key: string
-}
+type GridHighlightCardProps = React.ComponentProps<typeof Card> &
+  NonNullable<NonNullable<GridHighlightProps['cards']>[number]>
 
 export function GridHighlightCard({
-  className,
-  ...props
+  title,
+  description,
+  bullets,
+  cta,
+  ...cardProps
 }: GridHighlightCardProps) {
-  const { title, description, bullets, cta } = props
-
   return (
-    <Card {...props}>
+    <Card {...cardProps}>
       <CardHeader>
         <CardDescription>{description}</CardDescription>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent className="grid grid-rows-3">
-        {bullets.map((bullet) => (
+        {bullets?.map((bullet) => (
           <div
             key={bullet._key}
             className="mb-4 grid grid-cols-[25px_1fr] items-start last:mb-0 last:pb-0"

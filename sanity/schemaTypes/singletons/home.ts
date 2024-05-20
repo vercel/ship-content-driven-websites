@@ -1,5 +1,5 @@
 import { HomeIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const home = defineType({
   name: 'home',
@@ -7,13 +7,6 @@ export const home = defineType({
   type: 'document',
   icon: HomeIcon,
   fields: [
-    defineField({
-      name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
     defineField({
       name: 'metadataBase',
       title: 'Metadata Base',
@@ -105,17 +98,6 @@ export const home = defineType({
           ],
         }),
       ],
-    }),
-    defineField({
-      type: 'slug',
-      name: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'title',
-      },
-      readOnly: true,
-      description: 'This is the home page, the slug is not editable',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'customComponents',

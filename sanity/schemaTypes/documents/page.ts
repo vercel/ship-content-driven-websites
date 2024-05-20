@@ -16,10 +16,21 @@ export const page = defineType({
       type: 'slug',
       name: 'slug',
       title: 'Page slug',
+      description:
+        'The URL path for this page. It should not have a leading slash.',
       options: {
         source: 'title',
       },
-      validation: (rule) => rule.required().error("You need to set a slug to publish/preview the page"),
+      validation: (rule) =>
+        rule.required().custom((slug) => {
+          const slugValue = slug?.current ?? ''
+          if (slugValue === '/') {
+            return 'The slug cannot be the root path.'
+          } else if (/^\//.test(slugValue)) {
+            return 'The slug cannot start with a slash.'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'description',
