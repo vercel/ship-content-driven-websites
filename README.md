@@ -28,6 +28,14 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
   - [Step 2. Set up the project locally](#step-2-set-up-the-project-locally)
   - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
   - [Step 4. Deploy to production](#step-4-deploy-to-production)
+- [Adding Components](#adding-components)
+    - [Step 1. Use v0.dev to help design a component](#step-1-use-v0dev-to-help-design-a-component)
+    - [Step 2. Create a schema for your new component in the `sanity/schemaTypes/objects` folder](#step-2-create-a-schema-for-your-new-component-in-the-sanityschematypesobjects-folder)
+    - [Step 3. Add the schema to the `sanity/schemaTypes/objects/custom-components.ts` file](#step-3-add-the-schema-to-the-sanityschematypesobjectscustom-componentsts-file)
+    - [Step 4. Create a new component in the `/components/sanity` folder](#step-4-create-a-new-component-in-the-componentssanity-folder)
+    - [Step 5. Automatically create types for your new schema](#step-5-automatically-create-types-for-your-new-schema)
+    - [Step 6. Update the `<CustomPortableText />` component in `components/custom-portable-text.tsx` to include your new component](#step-6-update-the-customportabletext--component-in-componentscustom-portable-texttsx-to-include-your-new-component)
+    - [Step 7. Go to the `/studio` route in your project to create and publish your content](#step-7-go-to-the-studio-route-in-your-project-to-create-and-publish-your-content)
 
 ## Project Overview
 
@@ -40,7 +48,7 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 | `/app/studio/[[...tool]]/Studio.tsx`                       | Where Sanity Studio is mounted                          |
 | `/app/api/revalidate/route.ts`                             | Serverless route for triggering ISR                     |
 | `/app/api/draft/route.ts`                                  | Serverless route for triggering Draft mode              |
-| `/sanity/schemaTypes`                                          | Where Sanity Studio gets its content types from         |
+| `/sanity/schemaTypes`                                      | Where Sanity Studio gets its content types from         |
 | `/sanity/plugins`                                          | Where the advanced Sanity Studio customization is setup |
 | `/sanity/loader/loadQuery.ts`,`/sanity/loader/useQuery.ts` | Configuration for the Sanity Content Lake client        |
 | `/components/custom-portable-text.tsx`                     | Component for rendering your custom React components    |
