@@ -2,7 +2,6 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { VercelToolbar } from '@vercel/toolbar/next'
 import type { Metadata } from 'next'
-import { Author } from 'next/dist/lib/metadata/types/metadata-types'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { ThemeProvider } from 'next-themes'
@@ -55,9 +54,13 @@ export default function IndexRoute({
       enableSystem
       disableTransitionOnChange
     >
-      <SiteHeader />
+      <Suspense fallback={<div className="h-14" />}>
+        <SiteHeader />
+      </Suspense>
       <div className="pb-8 px-4 max-w-7xl mx-auto">{children}</div>
-      <SiteFooter />
+      <Suspense>
+        <SiteFooter />
+      </Suspense>
       {draftMode().isEnabled && <LiveVisualEditing />}
       <Suspense>
         <VercelToolbar />
