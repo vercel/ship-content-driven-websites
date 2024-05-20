@@ -206,6 +206,12 @@ export type Page = {
   body?: CustomComponents
 }
 
+export type Slug = {
+  _type: 'slug'
+  current?: string
+  source?: string
+}
+
 export type Duration = {
   _type: 'duration'
   start?: string
@@ -243,7 +249,6 @@ export type Home = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  title?: string
   metadataBase?: {
     title?: string
     description?: string
@@ -261,7 +266,6 @@ export type Home = {
       siteName?: string
     }
   }
-  slug?: Slug
   body?: CustomComponents
 }
 
@@ -321,12 +325,6 @@ export type SanityImageMetadata = {
   hasAlpha?: boolean
   isOpaque?: boolean
 }
-
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./sanity/lib/queries.ts
 // Variable: homePageQuery
@@ -335,7 +333,7 @@ export type HomePageQueryResult = {
   _id: string
   overview: null
   body: CustomComponents | null
-  title: string | null
+  title: null
   metadataBase: {
     title?: string
     description?: string
@@ -370,8 +368,8 @@ export type SettingsQueryResult = {
   menuItems: Array<
     | {
         _type: 'home'
-        slug: string | null
-        title: string | null
+        slug: null
+        title: null
       }
     | {
         _type: 'page'
