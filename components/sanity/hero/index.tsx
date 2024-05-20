@@ -2,18 +2,15 @@
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
-import { Header, HeaderProps } from './header'
-import { Product, ProductCard } from './product-card'
+import { Hero as HeroProps } from '@/sanity.types'
 
-interface HeroParallaxProps {
-  products: Product[]
-  header: HeaderProps
-}
+import { Header } from './header'
+import { ProductCard } from './product-card'
 
-export const Hero = ({ products, header }: HeroParallaxProps) => {
-  const firstRow = products.slice(0, 3)
-  const secondRow = products.slice(3, 6)
-  const thirdRow = products.slice(6, 9)
+export const Hero = ({ products, header }: HeroProps) => {
+  const firstRow = products?.slice(0, 3)
+  const secondRow = products?.slice(3, 6)
+  const thirdRow = products?.slice(6, 9)
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -61,7 +58,7 @@ export const Hero = ({ products, header }: HeroParallaxProps) => {
         }}
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
+          {firstRow?.map((product) => (
             <ProductCard
               product={product}
               translate={translateX}
@@ -70,7 +67,7 @@ export const Hero = ({ products, header }: HeroParallaxProps) => {
           ))}
         </motion.div>
         <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
+          {secondRow?.map((product) => (
             <ProductCard
               product={product}
               translate={translateXReverse}
@@ -79,7 +76,7 @@ export const Hero = ({ products, header }: HeroParallaxProps) => {
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
+          {thirdRow?.map((product) => (
             <ProductCard
               product={product}
               translate={translateX}
