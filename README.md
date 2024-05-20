@@ -93,25 +93,41 @@ Alternatively, you can deploy without a `git` hosting provider using the Vercel 
 npx vercel --prod
 ```
 
-## Adding Components
+## Portable Text
 
-#### Step 1. Use [v0.dev][v0.dev] to help design a component
+We believe you should treat all your content as structured content, even your rich text and block content. Portable Text is a presentation-agnostic specification for block content that you can use with Sanity. It's designed to be efficient for real-time collaborative interfaces and makes it possible to annotate rich text with additional data structures recursively.
 
-#### Step 2. Create a schema for your new component in the `sanity/schemas/objects` folder
+When you query your Sanity project’s API your rich text content is returned as Portable Text. If you are accustomed to traditional or other headless CMSes you are probably used to dealing with HTML or Markdown out of the box. Portable Text is designed to be used in pretty much any format or markup where you want to render rich text content.
 
-#### Step 3. Add the schema to the `sanity/schemas/objects/custom-components.ts` file
+You render Portable Text by serializing the arrays that contain your content into the format you need it. There is tooling for generic markup and programming languages and for popular frameworks, that makes it easier to serialize Portable Text and lets you decide how custom content types should be handled.
 
-#### Step 4. Create a new component in the `/components/sanity` folder
+[Learn More about Portable Text.](https://www.sanity.io/docs/block-content)
 
-#### Step 5. Automatically create types for your new schema
+### Using the Custom Portable Text Component
+
+In the `/components/custom-portable-text.tsx` file of our project you will see a `types` object. This is an object of React components that renders different types of objects that might appear both as part of the input array, or as inline objects within text blocks - eg alongside text spans.
+
+[Learn More about types.](https://github.com/portabletext/react-portabletext?tab=readme-ov-file#portabletextreact)
+
+## Adding Custom Components
+
+Step 1. Use [v0.dev][v0.dev] to help design a component
+
+Step 2. Create a schema for your new component in the `sanity/schemas/objects` folder
+
+Step 3. Add the schema to the `sanity/schemas/objects/custom-components.ts` file
+
+Step 4. Create a new component in the `/components/sanity` folder
+
+Step 5. Automatically create types for your new schema
 
 ```bash
 npm run typegen
 ```
 
-#### Step 6. Update the `<CustomPortableText />` component in `components/custom-portable-text.tsx` to include your new component
+Step 6. Update the `<CustomPortableText />` component in `components/custom-portable-text.tsx` to include your new component
 
-#### Step 7. Go to the `/studio` route in your project to create and publish your content
+Step 7. Go to the `/studio` route in your project to create and publish your content
 
 [v0.dev]: https://v0.dev
 [vercel-deploy]: https://vercel.com/new/matthew-lewis-projects-c7bdd331/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fship-content-driven-websites%2Ftree%2Fstart&project-name=my-content-driven-website&repository-name=my-content-driven-website&demo-title=Content+Driven+Website&demo-description=A+content-driven+website+with+built-in+content+editing+and+instant+previews.+Uses+App+Router.&demo-url=https%3A%2F%2Fship-content-driven-websites.vercel.app&demo-image=https%3A%2F%2Fship-content-driven-websites.vercel.app%2Fapi%2Fog%3Ftitle%3DShip+Content+Driven+Websites&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx&external-id=nextjs%3Btemplate%3Dship-content-driven-websites&env=SANITY_REVALIDATE_SECRET&envDescription=A%20random%20string%20value%20used%20to%20validate%20revalidation%20requests%20from%20the%20Sanity%20Webhook.
