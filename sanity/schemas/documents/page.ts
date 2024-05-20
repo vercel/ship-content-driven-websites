@@ -17,10 +17,21 @@ export default defineType({
       type: 'slug',
       name: 'slug',
       title: 'Slug',
+      description:
+        'The URL path for this page. It should not have a leading slash.',
       options: {
         source: 'title',
       },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule.required().custom((slug) => {
+          const slugValue = slug?.current ?? ''
+          if (slugValue === '/') {
+            return 'The slug cannot be the root path.'
+          } else if (/^\//.test(slugValue)) {
+            return 'The slug cannot start with a slash.'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'description',
