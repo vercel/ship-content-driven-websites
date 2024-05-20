@@ -5,9 +5,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
 
     const hasTitle = searchParams.has('title')
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'My default title'
+    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : ''
 
     return new ImageResponse(
       (
@@ -55,14 +53,13 @@ export async function GET(request: Request) {
               whiteSpace: 'pre-wrap',
             }}
           >
-            {title} 👀
+            {title}
           </div>
         </div>
       ),
       {
         width: 1200,
         height: 630,
-        emoji: 'twemoji',
       },
     )
   } catch (e: any) {
