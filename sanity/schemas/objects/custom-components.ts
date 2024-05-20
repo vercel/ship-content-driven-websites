@@ -6,18 +6,12 @@ export default defineType({
   type: 'array',
   of: [
     {
-      name: 'hero',
-      title: 'Hero',
       type: 'hero',
     },
     {
-      name: 'spotlightHeader',
-      title: 'Spotlight Header',
       type: 'spotlightHeader',
     },
     {
-      name: 'gridHighlight',
-      title: 'Grid Highlight',
       type: 'gridHighlight',
     },
   ],
