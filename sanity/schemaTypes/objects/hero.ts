@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const hero = defineType({
   name: 'hero',
   type: 'object',
   title: 'Hero',

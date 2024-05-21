@@ -2,7 +2,7 @@ import { defineField } from 'sanity'
 
 import { DurationInput } from './DurationInput'
 
-export default defineField({
+export const duration = defineField({
   type: 'object',
   name: 'duration',
   title: 'Duration',

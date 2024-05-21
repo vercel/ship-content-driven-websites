@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const gridHighlight = defineType({
   name: 'gridHighlight',
   type: 'object',
   title: 'Grid Highlight',

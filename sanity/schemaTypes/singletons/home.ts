@@ -1,7 +1,7 @@
 import { HomeIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const home = defineType({
   name: 'home',
   title: 'Home',
   type: 'document',

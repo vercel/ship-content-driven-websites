@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const ctaLink = defineType({
   name: 'ctaLink',
   type: 'object',
   fields: [

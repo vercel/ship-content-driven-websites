@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const spotlightHeader = defineType({
   name: 'spotlightHeader',
   type: 'object',
   title: 'Spotlight Header',

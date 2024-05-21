@@ -1,6 +1,6 @@
 import { defineType } from 'sanity'
 
-export default defineType({
+export const metadata = defineType({
   name: 'metadata-page',
   type: 'object',
   title: 'Page Metadata',

@@ -28,6 +28,9 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
   - [Step 2. Set up the project locally](#step-2-set-up-the-project-locally)
   - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
   - [Step 4. Deploy to production](#step-4-deploy-to-production)
+- [Portable Text](#portable-text)
+  - [Using the Custom Portable Text Component](#using-the-custom-portable-text-component)
+- [Adding Custom Components](#adding-custom-components)
 
 ## Project Overview
 
@@ -40,7 +43,7 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 | `/app/studio/[[...tool]]/Studio.tsx`                       | Where Sanity Studio is mounted                          |
 | `/app/api/revalidate/route.ts`                             | Serverless route for triggering ISR                     |
 | `/app/api/draft/route.ts`                                  | Serverless route for triggering Draft mode              |
-| `/sanity/schemas`                                          | Where Sanity Studio gets its content types from         |
+| `/sanity/schemaTypes`                                      | Where Sanity Studio gets its content types from         |
 | `/sanity/plugins`                                          | Where the advanced Sanity Studio customization is setup |
 | `/sanity/loader/loadQuery.ts`,`/sanity/loader/useQuery.ts` | Configuration for the Sanity Content Lake client        |
 | `/components/custom-portable-text.tsx`                     | Component for rendering your custom React components    |
