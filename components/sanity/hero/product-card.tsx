@@ -33,6 +33,8 @@ export const ProductCard = ({
           image={product.thumbnail}
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product?.title ?? ''}
+          fill
+          style={{ objectFit: 'contain' }}
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-background pointer-events-none"></div>

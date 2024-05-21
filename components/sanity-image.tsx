@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 
 import { urlForImage } from '@/sanity/lib/utils'
 
-interface ImageBoxProps {
+interface ImageBoxProps extends Omit<ImageProps, 'src' | 'alt'> {
   image?: { asset?: any }
   alt: string
   width?: number
@@ -29,11 +29,10 @@ export default function SanityImage({
       {imageUrl && (
         <Image
           alt={alt}
-          fill
           src={imageUrl}
-          style={{
-            objectFit: 'contain',
-          }}
+          width={width}
+          height={height}
+          {...props} // Spread the remaining props to the Image component
         />
       )}
     </div>
