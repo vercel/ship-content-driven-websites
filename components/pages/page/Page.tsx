@@ -1,5 +1,9 @@
 import { CustomPortableText } from '@/components/custom-portable-text'
-import { HomePageQueryResult, PagesBySlugQueryResult } from '@/sanity.types'
+import {
+  CustomComponents,
+  HomePageQueryResult,
+  PagesBySlugQueryResult,
+} from '@/sanity.types'
 
 export interface PageProps {
   data: PagesBySlugQueryResult | HomePageQueryResult
@@ -13,7 +17,7 @@ export function Page({ data }: PageProps) {
       {body && (
         <CustomPortableText
           paragraphClasses="font-serif max-w-3xl text-gray-600 text-xl"
-          value={body}
+          value={body as CustomComponents}
         />
       )}
     </>
