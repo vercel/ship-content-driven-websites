@@ -62,9 +62,7 @@ export default function IndexRoute({
         <SiteFooter />
       </Suspense>
       {draftMode().isEnabled && <LiveVisualEditing />}
-      <Suspense>
-        <VercelToolbar />
-      </Suspense>
+      <VercelToolbar />
       <SpeedInsights />
       <Analytics />
     </ThemeProvider>
