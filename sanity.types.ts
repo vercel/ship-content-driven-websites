@@ -68,39 +68,65 @@ export type Geopoint = {
   alt?: number
 }
 
-export type CustomComponents = Array<
-  | ({
-      _key: string
-    } & Hero)
-  | ({
-      _key: string
-    } & SpotlightHeader)
-  | ({
-      _key: string
-    } & GridHighlight)
->
-
-export type GridHighlight = {
-  _type: 'gridHighlight'
-  cards?: Array<{
-    title?: string
-    description?: string
-    bullets?: Array<{
-      text?: string
-      _key: string
-    }>
-    cta?: {
-      label?: string
-      link?: string
-    }
-    _key: string
-  }>
+export type Settings = {
+  _id: string
+  _type: 'settings'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  menuItems?: Array<
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'home'
+      }
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'page'
+      }
+  >
+  name?: string
+  github?: string
+  twitter?: string
 }
 
-export type CtaLink = {
-  _type: 'ctaLink'
-  label?: string
-  url?: string
+export type Home = {
+  _id: string
+  _type: 'home'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  metadataBase?: {
+    title?: string
+    description?: string
+    keywords?: Array<string>
+    authors?: Array<{
+      name?: string
+      url?: string
+      _key: string
+    }>
+    publisher?: string
+    opengraph?: {
+      title?: string
+      description?: string
+      type?: string
+      siteName?: string
+    }
+  }
+  body?: Array<
+    | ({
+        _key: string
+      } & Hero)
+    | ({
+        _key: string
+      } & SpotlightHeader)
+    | ({
+        _key: string
+      } & GridHighlight)
+  >
 }
 
 export type SpotlightHeader = {
@@ -109,30 +135,6 @@ export type SpotlightHeader = {
   title?: string
   description?: string
   fill?: string
-}
-
-export type Hero = {
-  _type: 'hero'
-  header?: {
-    title?: string
-    description?: string
-  }
-  products?: Array<{
-    title?: string
-    link?: string
-    thumbnail?: {
-      asset?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      _type: 'image'
-    }
-    _key: string
-  }>
 }
 
 export type MetadataPage = {
@@ -194,6 +196,71 @@ export type MetadataPage = {
   }
 }
 
+export type Hero = {
+  _type: 'hero'
+  header?: {
+    title?: string
+    description?: string
+  }
+  products?: Array<{
+    title?: string
+    link?: string
+    thumbnail?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    _key: string
+  }>
+}
+
+export type GridHighlight = {
+  _type: 'gridHighlight'
+  cards?: Array<{
+    title?: string
+    description?: string
+    bullets?: Array<{
+      text?: string
+      _key: string
+    }>
+    cta?: {
+      label?: string
+      link?: string
+    }
+    _key: string
+  }>
+}
+
+export type CustomComponents = Array<
+  | ({
+      _key: string
+    } & Hero)
+  | ({
+      _key: string
+    } & SpotlightHeader)
+  | ({
+      _key: string
+    } & GridHighlight)
+>
+
+export type CtaLink = {
+  _type: 'ctaLink'
+  label?: string
+  url?: string
+}
+
+export type Duration = {
+  _type: 'duration'
+  start?: string
+  end?: string
+}
+
 export type Page = {
   _id: string
   _type: 'page'
@@ -203,69 +270,6 @@ export type Page = {
   title?: string
   slug?: Slug
   description?: string
-  body?: CustomComponents
-}
-
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
-
-export type Duration = {
-  _type: 'duration'
-  start?: string
-  end?: string
-}
-
-export type Settings = {
-  _id: string
-  _type: 'settings'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  menuItems?: Array<
-    | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'home'
-      }
-    | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'page'
-      }
-  >
-  name?: string
-  github?: string
-  twitter?: string
-}
-
-export type Home = {
-  _id: string
-  _type: 'home'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  metadataBase?: {
-    title?: string
-    description?: string
-    keywords?: Array<string>
-    authors?: Array<{
-      name?: string
-      url?: string
-      _key: string
-    }>
-    publisher?: string
-    opengraph?: {
-      title?: string
-      description?: string
-      type?: string
-      siteName?: string
-    }
-  }
   body?: CustomComponents
 }
 
@@ -325,6 +329,12 @@ export type SanityImageMetadata = {
   hasAlpha?: boolean
   isOpaque?: boolean
 }
+
+export type Slug = {
+  _type: 'slug'
+  current?: string
+  source?: string
+}
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./sanity/lib/queries.ts
 // Variable: homePageQuery
@@ -332,7 +342,17 @@ export declare const internalGroqTypeReferenceTo: unique symbol
 export type HomePageQueryResult = {
   _id: string
   overview: null
-  body: CustomComponents | null
+  body: Array<
+    | ({
+        _key: string
+      } & GridHighlight)
+    | ({
+        _key: string
+      } & Hero)
+    | ({
+        _key: string
+      } & SpotlightHeader)
+  > | null
   title: null
   metadataBase: {
     title?: string
