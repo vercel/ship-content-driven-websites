@@ -5,18 +5,20 @@ import { redirect } from 'next/navigation'
 import { client } from '@/sanity/lib/client'
 import { token } from '@/sanity/lib/token'
 
+export const dynamic = 'force-dynamic'
+
 const clientWithToken = client.withConfig({ token })
 
 export async function GET(request: Request) {
   let redirectTo = '/'
 
   try {
-    const { isValid, redirectTo: maybeRedirectTo } = await validatePreviewUrl(
+    const { isValid, redirectTo: possibleRedirect } = await validatePreviewUrl(
       clientWithToken,
       request.url,
     )
-    if (maybeRedirectTo) {
-      redirectTo = maybeRedirectTo
+    if (possibleRedirect) {
+      redirectTo = possibleRedirect
     }
 
     if (!isValid) {
@@ -28,6 +30,5 @@ export async function GET(request: Request) {
     console.error(error)
     return new Response('Error', { status: 500 })
   }
-
-  redirect(redirectTo)
+  return redirect(redirectTo)
 }
