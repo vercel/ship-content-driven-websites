@@ -62,6 +62,11 @@ export default function IndexRoute({
         <SiteFooter />
       </Suspense>
       {draftMode().isEnabled && <LiveVisualEditing />}
+      {/*
+          ⚠️ This shows the toolbar to all visitors
+          See detailed instructions to limit who can see the toolbar for real applications:
+          https://vercel.com/docs/workflow-collaboration/vercel-toolbar/in-production-and-localhost/add-to-production
+        */}
       <VercelToolbar />
       <SpeedInsights />
       <Analytics />
