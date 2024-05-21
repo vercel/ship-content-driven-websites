@@ -492,14 +492,14 @@
               "value": {
                 "type": "string"
               },
-              "optional": true
+              "optional": false
             },
             "description": {
               "type": "objectAttribute",
               "value": {
                 "type": "string"
               },
-              "optional": true
+              "optional": false
             },
             "keywords": {
               "type": "objectAttribute",
@@ -673,14 +673,14 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "title": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "description": {
           "type": "objectAttribute",
@@ -694,7 +694,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         }
       }
     }
@@ -1088,14 +1088,14 @@
                 "value": {
                   "type": "string"
                 },
-                "optional": true
+                "optional": false
               },
               "description": {
                 "type": "objectAttribute",
                 "value": {
                   "type": "string"
                 },
-                "optional": true
+                "optional": false
               }
             }
           },
@@ -1113,14 +1113,14 @@
                   "value": {
                     "type": "string"
                   },
-                  "optional": true
+                  "optional": false
                 },
                 "link": {
                   "type": "objectAttribute",
                   "value": {
                     "type": "string"
                   },
-                  "optional": true
+                  "optional": false
                 },
                 "thumbnail": {
                   "type": "objectAttribute",
@@ -1182,7 +1182,7 @@
                       }
                     }
                   },
-                  "optional": true
+                  "optional": false
                 }
               },
               "rest": {
@@ -1198,7 +1198,7 @@
               }
             }
           },
-          "optional": true
+          "optional": false
         }
       }
     }
@@ -1228,14 +1228,14 @@
                   "value": {
                     "type": "string"
                   },
-                  "optional": true
+                  "optional": false
                 },
                 "description": {
                   "type": "objectAttribute",
                   "value": {
                     "type": "string"
                   },
-                  "optional": true
+                  "optional": false
                 },
                 "bullets": {
                   "type": "objectAttribute",
@@ -1249,7 +1249,7 @@
                           "value": {
                             "type": "string"
                           },
-                          "optional": true
+                          "optional": false
                         }
                       },
                       "rest": {
@@ -1265,7 +1265,7 @@
                       }
                     }
                   },
-                  "optional": true
+                  "optional": false
                 },
                 "cta": {
                   "type": "objectAttribute",
@@ -1277,14 +1277,14 @@
                         "value": {
                           "type": "string"
                         },
-                        "optional": true
+                        "optional": false
                       },
                       "link": {
                         "type": "objectAttribute",
                         "value": {
                           "type": "string"
                         },
-                        "optional": true
+                        "optional": false
                       }
                     }
                   },
@@ -1391,7 +1391,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         }
       }
     }
@@ -1466,7 +1466,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -1474,14 +1474,14 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "description": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "body": {
         "type": "objectAttribute",
@@ -1848,7 +1848,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "source": {
           "type": "objectAttribute",

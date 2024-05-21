@@ -48,7 +48,7 @@ export const Hero = ({ products, header }: HeroProps) => {
       ref={ref}
       className="h-[155rem] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header {...header} />
+      {header && <Header {...header} />}
       <motion.div
         style={{
           rotateX,

@@ -100,8 +100,8 @@ export type Home = {
   _updatedAt: string
   _rev: string
   metadataBase?: {
-    title?: string
-    description?: string
+    title: string
+    description: string
     keywords?: Array<string>
     authors?: Array<{
       name?: string
@@ -131,10 +131,10 @@ export type Home = {
 
 export type SpotlightHeader = {
   _type: 'spotlightHeader'
-  spotlight?: string
-  title?: string
+  spotlight: string
+  title: string
   description?: string
-  fill?: string
+  fill: string
 }
 
 export type MetadataPage = {
@@ -199,13 +199,13 @@ export type MetadataPage = {
 export type Hero = {
   _type: 'hero'
   header?: {
-    title?: string
-    description?: string
+    title: string
+    description: string
   }
-  products?: Array<{
-    title?: string
-    link?: string
-    thumbnail?: {
+  products: Array<{
+    title: string
+    link: string
+    thumbnail: {
       asset?: {
         _ref: string
         _type: 'reference'
@@ -223,15 +223,15 @@ export type Hero = {
 export type GridHighlight = {
   _type: 'gridHighlight'
   cards?: Array<{
-    title?: string
-    description?: string
-    bullets?: Array<{
-      text?: string
+    title: string
+    description: string
+    bullets: Array<{
+      text: string
       _key: string
     }>
     cta?: {
-      label?: string
-      link?: string
+      label: string
+      link: string
     }
     _key: string
   }>
@@ -252,7 +252,7 @@ export type CustomComponents = Array<
 export type CtaLink = {
   _type: 'ctaLink'
   label?: string
-  url?: string
+  url: string
 }
 
 export type Duration = {
@@ -267,9 +267,9 @@ export type Page = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  title?: string
-  slug?: Slug
-  description?: string
+  title: string
+  slug: Slug
+  description: string
   body?: CustomComponents
 }
 
@@ -332,7 +332,7 @@ export type SanityImageMetadata = {
 
 export type Slug = {
   _type: 'slug'
-  current?: string
+  current: string
   source?: string
 }
 export declare const internalGroqTypeReferenceTo: unique symbol
@@ -355,8 +355,8 @@ export type HomePageQueryResult = {
   > | null
   title: null
   metadataBase: {
-    title?: string
-    description?: string
+    title: string
+    description: string
     keywords?: Array<string>
     authors?: Array<{
       name?: string
@@ -377,9 +377,9 @@ export type HomePageQueryResult = {
 export type PagesBySlugQueryResult = {
   _id: string
   body: CustomComponents | null
-  description: string | null
-  title: string | null
-  slug: string | null
+  description: string
+  title: string
+  slug: string
 } | null
 // Variable: settingsQuery
 // Query:   *[_type == "settings"][0]{    footer,    menuItems[]->{      _type,      "slug": slug.current,      title    },    github,    twitter,    name,  }
@@ -393,8 +393,8 @@ export type SettingsQueryResult = {
       }
     | {
         _type: 'page'
-        slug: string | null
-        title: string | null
+        slug: string
+        title: string
       }
   > | null
   github: string | null
