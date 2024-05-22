@@ -20,5 +20,8 @@ export const customComponents = defineType({
     {
       type: 'gridHighlight',
     },
+    {
+      type: 'personList',
+    },
   ],
 })
