@@ -5,6 +5,8 @@ import { Hero } from '@/components/sanity/hero'
 import { Spotlight } from '@/components/sanity/spotlight'
 import { CustomComponents } from '@/sanity.types'
 
+import PersonList from './sanity/person-list'
+
 export function CustomPortableText({
   value,
 }: {
@@ -21,6 +23,9 @@ export function CustomPortableText({
       },
       gridHighlight: ({ value }) => {
         return <GridHighlight {...value} />
+      },
+      personList: ({ value }) => {
+        return <PersonList {...value} />
       },
     },
   }
