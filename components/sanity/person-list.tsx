@@ -1,8 +1,8 @@
-import Link from 'next/link'
-
 import { Person } from '@/sanity.types'
 
 import SanityImage from '../sanity-image'
+import Link from 'next/link'
+
 
 /**
  * v0 by Vercel.
