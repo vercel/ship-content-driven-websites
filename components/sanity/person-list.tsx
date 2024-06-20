@@ -25,7 +25,7 @@ export default function PersonList(props: {
           {props.persons.map((person: Person) => (
             <div
               key={person._id}
-              className="group relative overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:bg-gray-800"
+              className="group relative overflow-hidden rounded-lg bg-white dark:bg-black shadow-md transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-square overflow-hidden">
                 <SanityImage
