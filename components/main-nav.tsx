@@ -11,7 +11,7 @@ export function MainNav({ data }: { data: SettingsQueryResult }) {
         {data?.name ? (
           <span className="hidden font-bold sm:inline-block">{data?.name}</span>
         ) : (
-          <Icons.logo className="w-[124px]" />
+          <Icons.logo className="w-[22px]" />
         )}
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">

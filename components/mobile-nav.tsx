@@ -65,7 +65,7 @@ export function MobileNav({ data }: { data: SettingsQueryResult }) {
               {data?.name}
             </span>
           ) : (
-            <Icons.logo className="w-[124px]" />
+            <Icons.logo className="w-[22px]" />
           )}
 
           <span className="font-bold">{data?.name}</span>
