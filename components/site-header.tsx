@@ -8,6 +8,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { cn } from '@/lib/utils'
 import { loadSettings } from '@/sanity/loader/loadQuery'
 
+import DeployButton from './deploy-button'
 import { buttonVariants } from './ui/button'
 
 export async function SiteHeader() {
@@ -23,9 +24,7 @@ export async function SiteHeader() {
             <CommandMenu data={initial.data} />
           </div>
           <nav className="flex items-center">
-            <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fship-content-driven-websites&project-name=my-content-driven-website&repository-name=my-content-driven-website&demo-title=Ship+Content+Driven+Websites&demo-description=A+content-driven+website+with+built-in+content+editing+and+instant+previews.+Uses+App+Router.&demo-url=https%3A%2F%2Fship-content-driven-websites.vercel.app&demo-image=https%3A%2F%2Fship-content-driven-websites.vercel.app%2Fapi%2Fog&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx&external-id=nextjs%3Btemplate%3Dship-content-driven-websites&env=SANITY_REVALIDATE_SECRET&envDescription=A+random+string+value+used+to+validate+revalidation+requests+from+the+Sanity+Webhook.">
-              <Icons.deploy />
-            </a>
+            <DeployButton />
             {initial?.data?.github && (
               <Link
                 prefetch

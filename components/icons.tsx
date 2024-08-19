@@ -33,7 +33,7 @@ export const Icons = {
     </svg>
   ),
   deploy: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="103" height="32" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="103" height="32" fill="none" {...props}>
       <rect width="103" height="32" fill="#1A1A1A" rx="6" />
       <rect
         width="102"
