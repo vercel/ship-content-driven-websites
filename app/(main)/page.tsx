@@ -12,12 +12,13 @@ export default async function IndexRoute() {
 
   if (draftMode().isEnabled) {
     return (
-      <HomePagePreview
-        initial={initial}
-        params={{
-          slug: '/',
-        }}
-      />
+      // <HomePagePreview
+      //   initial={initial}
+      //   params={{
+      //     slug: '/',
+      //   }}
+      // />
+      <p>draft mode</p>
     )
   }
 
