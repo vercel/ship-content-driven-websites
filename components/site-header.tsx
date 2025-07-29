@@ -54,7 +54,7 @@ export async function SiteHeader() {
                 <div
                   className={cn(
                     buttonVariants({
-                      variant: 'ghost',
+                      variant: 'default',
                     }),
                     'w-9 px-0',
                   )}
